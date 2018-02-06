@@ -1,0 +1,93 @@
+# A simple example of family relations using the gedcom vocabulary,
+#  based on the Genealogical Data Communication genealogy standard,
+#  https://en.wikipedia.org/wiki/GEDCOM
+
+@prefix : <#> .
+@prefix gc: <http://www.daml.org/2001/01/gedcom/gedcom#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+
+
+# data from the Bible in GEDCOM form
+
+:fam1 a gc:Family .
+
+:Sushmitha gc:sex gc:Female;
+  gc:givenName "Sushmitha";
+  gc:sibling :Aishwarya;
+  gc:parent :Manjunath;
+  gc:childIn :fam1; 
+  gc:birth [a gc:Birth; gc:place "Shimoga"; gc:date "0/0/0"];
+  gc:age "25".
+
+:Aishwarya gc:sex gc:Female;
+  gc:givenName "Aishwarya";
+  gc:sibling :Sushmitha;
+  gc:parent :Manjunath;
+  gc:childIn :fam1;
+  gc:birth [a gc:Birth; gc:place "Mangalore"; gc:date "0/0/0"];
+  gc:age "25".
+
+:Manjunath gc:sex gc:Male;
+  gc:givenName "Manjunath";
+  gc:spouse :fam1;
+  gc:birth [a gc:Birth; gc:place "Shimoga"; gc:date "0/0/0"];
+  gc:sibling :Srinivas;
+  gc:parent :Narayan;
+  gc:age "55".
+
+:Geetha gc:sex gc:Female;
+  gc:givenName "Geetha";
+  gc:spouse :Manjunath;
+  gc:birth [a gc:Birth; gc:place "Mangalore"; gc:date "0/0/0"];
+  gc:age "55".
+
+:Srinivas gc:sex gc:Male;
+  gc:givenName "Srinivas";
+  gc:sibling :Manjunath;
+  gc:parent :Narayan;
+  gc:birth [a gc:Birth; gc:place "Chennai"; gc:date "0/0/0"];
+   gc:age "56".
+
+:Neha gc:sex gc:Female;
+  gc:givenName "Neha";
+  gc:parent :Narayan;
+  gc:birth [a gc:Birth; gc:place "Chennai"; gc:date "0/0/0"];
+ gc:age "56". 
+
+:Narayan gc:sex gc:Male;
+  gc:givenName "Narayan";
+  gc:spouse :Gouri;
+  gc:birth [a gc:Birth; gc:place "Shimoga"; gc:date "0/0/0"];
+  gc:givenName "Narayan";
+  gc:sibling :Ganesh;
+  gc:parent :Mahesh;
+   gc:age "77".
+
+:Gouri gc:sex gc:Female;
+  gc:givenName "Gouri";
+  gc:spouse :Narayan;
+  gc:birth [a gc:Birth; gc:place "bangalore"; gc:date "0/0/0"];
+   gc:age "70".
+
+:Ganesh gc:sex gc:Male;
+  gc:givenName "Ganesh";
+  gc:parent :Mahesh.
+:Sheela gc:sex gc:Female;
+  gc:givenName "Sheela".
+
+:Mahesh gc:sex gc:Male;
+  gc:givenName "Narayan";
+  gc:spouse :Rupa;
+  gc:birth [a gc:Birth; gc:place "bangalore"; gc:date "0/0/0"] . 
+
+:Rupa gc:sex gc:Female;
+  gc:givenName "Rupa";
+ gc:birth [a gc:Birth; gc:place "mysore"; gc:date "0/0/0"];
+  gc:spouse :Mahesh.
+
+# [ ] a owl:AllDifferent; owl:distinctMembers (:Sushmitha :Aishwarya :Manjunath :Geetha :Srinivas :Neha :Narayan :Gouri :Ganesh :Sheela :Mahesh :Rupa) .
+
+
+

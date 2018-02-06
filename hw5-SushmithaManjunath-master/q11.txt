@@ -1,0 +1,30 @@
+# Find 10 strong social triads involving Barack Obama and two other
+# people.  A strong social triad is a group of three people where
+# there is a link between every pair in each direction.
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX yago: <http://dbpedia.org/class/yago/>
+
+SELECT DISTINCT ?Person1 , ?Person2
+WHERE { 
+?BarackObama a dbo:Person . 
+?BarackObama foaf:isPrimaryTopicOf ?PriTopic . 
+FILTER ( ?PriTopic = <http://en.wikipedia.org/wiki/Barack_Obama> ) . 
+
+{ { ?BarackObama [] ?Person1  } UNION { ?Person1 [] ?BarackObama } } . 
+?Person1 a dbo:Person .
+
+{ { ?Person1 [] ?Person2 } UNION { ?Person2 [] ?Person1 } } . 
+?Person2 a dbo:Person .
+FILTER ( ?Person1 != ?Person2 ) .
+
+{ { ?BarackObama [] ?Person2 } UNION { ?Person2 [] ?BarackObama } } . 
+
+?Person1 [] dbr:Illinois .
+?Person2 [] dbr:Illinois .
+
+}

@@ -1,0 +1,521 @@
+#Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
+        #    using base file:///home/shusmitha/semantic web/hw3-SushmithaManjunath/myfamily.ttl
+        
+#  Notation3 generation by
+#       notation3.py,v 1.200 2007/12/11 21:18:08 syosi Exp
+
+#   Base was: file:///home/shusmitha/semantic web/hw3-SushmithaManjunath/myfamily.ttl
+     @prefix : <#> .
+    @prefix foaf_: <http://xmlns.com/foaf/0.1/foaf#> .
+    @prefix gc: <http://www.daml.org/2001/01/gedcom/gedcom#> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    
+    "0/0/0"     a rdfs:Resource .
+    
+    "25"     a rdfs:Resource .
+    
+    "55"     a rdfs:Resource .
+    
+    "56"     a rdfs:Resource .
+    
+    "70"     a rdfs:Resource .
+    
+    "77"     a rdfs:Resource .
+    
+    "Aishwarya"     a rdfs:Resource .
+    
+    "Chennai"     a rdfs:Resource .
+    
+    "Ganesh"     a rdfs:Resource .
+    
+    "Geetha"     a rdfs:Resource .
+    
+    "Gouri"     a rdfs:Resource .
+    
+    "Mangalore"     a rdfs:Resource .
+    
+    "Manjunath"     a rdfs:Resource .
+    
+    "Narayan"     a rdfs:Resource .
+    
+    "Neha"     a rdfs:Resource .
+    
+    "Rupa"     a rdfs:Resource .
+    
+    "Sheela"     a rdfs:Resource .
+    
+    "Shimoga"     a rdfs:Resource .
+    
+    "Srinivas"     a rdfs:Resource .
+    
+    "Sushmitha"     a rdfs:Resource .
+    
+    "bangalore"     a rdfs:Resource .
+    
+    "mysore"     a rdfs:Resource .
+    
+    rdf:type     a rdf:Property,
+                rdfs:Resource .
+    
+    :Aishwarya     a rdfs:Resource;
+         gc:age "25";
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc:date "0/0/0";
+             gc:place "Mangalore" ];
+         gc:childIn :fam1;
+         gc:father :Manjunath;
+         gc:givenName "Aishwarya";
+         gc:grandfather :Narayan;
+         gc:grandparent :Narayan;
+         gc:parent :Manjunath;
+         gc:sameAs :Aishwarya,
+                :Sushmitha;
+         gc:sex gc:Female;
+         gc:sibling :Sushmitha;
+         gc:sister :Sushmitha;
+         gc:uncle :Srinivas;
+         gc:youngerThan :Geetha,
+                :Gouri,
+                :Manjunath,
+                :Narayan,
+                :Neha,
+                :Srinivas;
+         owl:differentFrom :Ganesh,
+                :Geetha,
+                :Gouri,
+                :Mahesh,
+                :Manjunath,
+                :Narayan,
+                :Neha,
+                :Rupa,
+                :Sheela,
+                :Srinivas,
+                :Sushmitha;
+         foaf_:knows :Manjunath,
+                :Narayan,
+                :Srinivas,
+                :Sushmitha .
+    
+    :Ganesh     a rdfs:Resource;
+         gc:father :Mahesh;
+         gc:givenName "Ganesh";
+         gc:nephew :Manjunath,
+                :Srinivas;
+         gc:niece :Neha;
+         gc:parent :Mahesh;
+         gc:sex gc:Male;
+         owl:differentFrom :Aishwarya,
+                :Geetha,
+                :Gouri,
+                :Mahesh,
+                :Manjunath,
+                :Narayan,
+                :Neha,
+                :Rupa,
+                :Sheela,
+                :Srinivas,
+                :Sushmitha;
+         foaf_:knows :Mahesh .
+    
+    :Geetha     a rdfs:Resource;
+         gc:age "55";
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc:date "0/0/0";
+             gc:place "Mangalore" ];
+         gc:givenName "Geetha";
+         gc:husband :Manjunath;
+         gc:sameAs :Geetha,
+                :Manjunath;
+         gc:sex gc:Female;
+         gc:spouse :Manjunath;
+         gc:youngerThan :Gouri,
+                :Narayan,
+                :Neha,
+                :Srinivas;
+         owl:differentFrom :Aishwarya,
+                :Ganesh,
+                :Gouri,
+                :Mahesh,
+                :Manjunath,
+                :Narayan,
+                :Neha,
+                :Rupa,
+                :Sheela,
+                :Srinivas,
+                :Sushmitha;
+         foaf_:knows :Manjunath .
+    
+    :Gouri     a rdfs:Resource;
+         gc:age "70";
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc:date "0/0/0";
+             gc:place "bangalore" ];
+         gc:givenName "Gouri";
+         gc:husband :Narayan;
+         gc:sameAs :Gouri;
+         gc:sex gc:Female;
+         gc:spouse :Narayan;
+         gc:youngerThan :Narayan;
+         owl:differentFrom :Aishwarya,
+                :Ganesh,
+                :Geetha,
+                :Mahesh,
+                :Manjunath,
+                :Narayan,
+                :Neha,
+                :Rupa,
+                :Sheela,
+                :Srinivas,
+                :Sushmitha;
+         foaf_:knows :Narayan .
+    
+    :Mahesh     a rdfs:Resource;
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc:date "0/0/0";
+             gc:place "bangalore" ];
+         gc:givenName "Narayan";
+         gc:granddaughter :Neha;
+         gc:grandson :Manjunath,
+                :Srinivas;
+         gc:sex gc:Male;
+         gc:son :Ganesh,
+                :Narayan;
+         gc:spouse :Rupa;
+         gc:wife :Rupa;
+         owl:differentFrom :Aishwarya,
+                :Ganesh,
+                :Geetha,
+                :Gouri,
+                :Manjunath,
+                :Neha,
+                :Rupa,
+                :Sheela,
+                :Srinivas,
+                :Sushmitha;
+         foaf_:knows :Rupa .
+    
+    :Manjunath     a rdfs:Resource;
+         gc:age "55";
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc:date "0/0/0";
+             gc:place "Shimoga" ];
+         gc:brother :Srinivas;
+         gc:daughter :Aishwarya,
+                :Sushmitha;
+         gc:father :Narayan;
+         gc:givenName "Manjunath";
+         gc:grandfather :Mahesh;
+         gc:grandparent :Mahesh;
+         gc:parent :Narayan;
+         gc:sameAs :Geetha,
+                :Manjunath;
+         gc:sex gc:Male;
+         gc:sibling :Srinivas;
+         gc:spouse :fam1;
+         gc:uncle :Ganesh;
+         gc:youngerThan :Gouri,
+                :Narayan,
+                :Neha,
+                :Srinivas;
+         owl:differentFrom :Aishwarya,
+                :Ganesh,
+                :Geetha,
+                :Gouri,
+                :Mahesh,
+                :Narayan,
+                :Neha,
+                :Rupa,
+                :Sheela,
+                :Srinivas,
+                :Sushmitha;
+         foaf_:knows :Ganesh,
+                :Mahesh,
+                :Narayan,
+                :Srinivas,
+                :fam1 .
+    
+    :Narayan     a rdfs:Resource;
+         gc:age "77";
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc:date "0/0/0";
+             gc:place "Shimoga" ];
+         gc:brother :Ganesh;
+         gc:daughter :Neha;
+         gc:father :Mahesh;
+         gc:givenName "Narayan";
+         gc:granddaughter :Aishwarya,
+                :Sushmitha;
+         gc:parent :Mahesh;
+         gc:sameAs :Narayan;
+         gc:sex gc:Male;
+         gc:sibling :Ganesh;
+         gc:son :Manjunath,
+                :Srinivas;
+         gc:spouse :Gouri;
+         gc:wife :Gouri;
+         owl:differentFrom :Aishwarya,
+                :Ganesh,
+                :Geetha,
+                :Gouri,
+                :Manjunath,
+                :Neha,
+                :Rupa,
+                :Sheela,
+                :Srinivas,
+                :Sushmitha;
+         foaf_:knows :Ganesh,
+                :Gouri,
+                :Mahesh .
+    
+    :Neha     a rdfs:Resource;
+         gc:age "56";
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc:date "0/0/0";
+             gc:place "Chennai" ];
+         gc:father :Narayan;
+         gc:givenName "Neha";
+         gc:grandfather :Mahesh;
+         gc:grandparent :Mahesh;
+         gc:parent :Narayan;
+         gc:sameAs :Neha,
+                :Srinivas;
+         gc:sex gc:Female;
+         gc:uncle :Ganesh;
+         gc:youngerThan :Gouri,
+                :Narayan;
+         owl:differentFrom :Aishwarya,
+                :Ganesh,
+                :Geetha,
+                :Gouri,
+                :Mahesh,
+                :Manjunath,
+                :Narayan,
+                :Rupa,
+                :Sheela,
+                :Srinivas,
+                :Sushmitha;
+         foaf_:knows :Ganesh,
+                :Mahesh,
+                :Narayan .
+    
+    :Rupa     a rdfs:Resource;
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc:date "0/0/0";
+             gc:place "mysore" ];
+         gc:givenName "Rupa";
+         gc:husband :Mahesh;
+         gc:sex gc:Female;
+         gc:spouse :Mahesh;
+         owl:differentFrom :Aishwarya,
+                :Ganesh,
+                :Geetha,
+                :Gouri,
+                :Mahesh,
+                :Manjunath,
+                :Narayan,
+                :Neha,
+                :Sheela,
+                :Srinivas,
+                :Sushmitha;
+         foaf_:knows :Mahesh .
+    
+    :Sheela     a rdfs:Resource;
+         gc:givenName "Sheela";
+         gc:sex gc:Female;
+         owl:differentFrom :Aishwarya,
+                :Ganesh,
+                :Geetha,
+                :Gouri,
+                :Mahesh,
+                :Manjunath,
+                :Narayan,
+                :Neha,
+                :Rupa,
+                :Srinivas,
+                :Sushmitha .
+    
+    :Srinivas     a rdfs:Resource;
+         gc:age "56";
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc:date "0/0/0";
+             gc:place "Chennai" ];
+         gc:brother :Manjunath;
+         gc:father :Narayan;
+         gc:givenName "Srinivas";
+         gc:grandfather :Mahesh;
+         gc:grandparent :Mahesh;
+         gc:niece :Aishwarya,
+                :Sushmitha;
+         gc:parent :Narayan;
+         gc:sameAs :Neha,
+                :Srinivas;
+         gc:sex gc:Male;
+         gc:sibling :Manjunath;
+         gc:uncle :Ganesh;
+         gc:youngerThan :Gouri,
+                :Narayan;
+         owl:differentFrom :Aishwarya,
+                :Ganesh,
+                :Geetha,
+                :Gouri,
+                :Mahesh,
+                :Manjunath,
+                :Narayan,
+                :Neha,
+                :Rupa,
+                :Sheela,
+                :Sushmitha;
+         foaf_:knows :Ganesh,
+                :Mahesh,
+                :Manjunath,
+                :Narayan .
+    
+    :Sushmitha     a rdfs:Resource;
+         gc:age "25";
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc:date "0/0/0";
+             gc:place "Shimoga" ];
+         gc:childIn :fam1;
+         gc:father :Manjunath;
+         gc:givenName "Sushmitha";
+         gc:grandfather :Narayan;
+         gc:grandparent :Narayan;
+         gc:parent :Manjunath;
+         gc:sameAs :Aishwarya,
+                :Sushmitha;
+         gc:sex gc:Female;
+         gc:sibling :Aishwarya;
+         gc:sister :Aishwarya;
+         gc:uncle :Srinivas;
+         gc:youngerThan :Geetha,
+                :Gouri,
+                :Manjunath,
+                :Narayan,
+                :Neha,
+                :Srinivas;
+         owl:differentFrom :Aishwarya,
+                :Ganesh,
+                :Geetha,
+                :Gouri,
+                :Mahesh,
+                :Manjunath,
+                :Narayan,
+                :Neha,
+                :Rupa,
+                :Sheela,
+                :Srinivas;
+         foaf_:knows :Aishwarya,
+                :Manjunath,
+                :Narayan,
+                :Srinivas .
+    
+    :fam1     a gc:Family,
+                rdfs:Resource .
+    
+    gc:Birth     a rdfs:Resource .
+    
+    gc:Family     a rdfs:Resource .
+    
+    gc:Female     a rdfs:Resource .
+    
+    gc:Male     a rdfs:Resource .
+    
+    gc:age     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:birth     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:brother     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:childIn     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:date     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:daughter     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:father     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:givenName     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:granddaughter     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:grandfather     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:grandparent     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:grandson     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:husband     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:nephew     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:niece     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:parent     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:place     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:sex     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:sibling     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:sister     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:son     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:spouse     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:uncle     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:wife     a rdf:Property,
+                rdfs:Resource .
+    
+    rdf:Property     a rdfs:Resource .
+    
+    rdfs:Resource     a rdfs:Resource .
+    
+#ENDS

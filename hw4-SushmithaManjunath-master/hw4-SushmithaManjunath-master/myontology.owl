@@ -1,0 +1,591 @@
+@prefix : <http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4> .
+
+<http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#has-Child
+:has-Child rdf:type owl:ObjectProperty ;
+           owl:inverseOf :has-Parent .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#has-Employee
+:has-Employee rdf:type owl:ObjectProperty ;
+              owl:inverseOf :has-Employer ;
+              rdfs:domain :Organization ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :Adult
+                                         :Child
+                                       )
+                         ] .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#has-Employer
+:has-Employer rdf:type owl:ObjectProperty ;
+              rdfs:domain :Organization .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#has-Father
+:has-Father rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Person ;
+            rdfs:range [ owl:intersectionOf ( :Person
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :sex ;
+                                                owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                    owl:onDatatype xsd:string ;
+                                                                    owl:withRestrictions ( [ xsd:pattern "Male"
+                                                                                           ]
+                                                                                         )
+                                                                  ]
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ] .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#has-Grandfather
+:has-Grandfather rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Person ;
+                 rdfs:range :Male ,
+                            :Person ;
+                 owl:propertyChainAxiom ( :has-Father
+                                          :has-Father
+                                        ) ,
+                                        ( :has-Mother
+                                          :has-Father
+                                        ) .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#has-Grandmother
+:has-Grandmother rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Person ;
+                 rdfs:range :Female ,
+                            :Person ;
+                 owl:propertyChainAxiom ( :has-Father
+                                          :has-Mother
+                                        ) ,
+                                        ( :has-Mother
+                                          :has-Mother
+                                        ) .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#has-Grandparent
+:has-Grandparent rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :Person ;
+                 rdfs:range :Person ;
+                 owl:propertyChainAxiom ( :has-Grandfather
+                                        ) ,
+                                        ( :has-Grandmother
+                                        ) .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#has-Location
+:has-Location rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#has-Mother
+:has-Mother rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Person ;
+            rdfs:range [ owl:intersectionOf ( :Person
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :sex ;
+                                                owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                    owl:onDatatype xsd:string ;
+                                                                    owl:withRestrictions ( [ xsd:pattern "Female"
+                                                                                           ]
+                                                                                         )
+                                                                  ]
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ] .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#has-Parent
+:has-Parent rdf:type owl:ObjectProperty ;
+            rdfs:domain :Person ;
+            rdfs:range :Person ;
+            owl:propertyChainAxiom ( :has-Father
+                                   ) ,
+                                   ( :has-Mother
+                                   ) .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#has-SSN
+:has-SSN rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Person ;
+         rdfs:range :SSN .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#age
+:age rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#latitude
+:latitude rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#longitude
+:longitude rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sex
+:sex rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#ssn
+:ssn rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Abstract_Object
+:Abstract_Object rdf:type owl:Class ;
+                 owl:disjointWith :Physical_Object .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Adult
+:Adult rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :age ;
+                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                         owl:onDatatype xsd:int ;
+                                                                         owl:withRestrictions ( [ xsd:minExclusive "18"^^xsd:int
+                                                                                                ]
+                                                                                              )
+                                                                       ]
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+       rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Animate_Object
+:Animate_Object rdf:type owl:Class ;
+                rdfs:subClassOf :Physical_Object ;
+                owl:disjointWith :Inanimate_Object .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Boy
+:Boy rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :Male
+                                                :Person
+                                                [ rdf:type owl:Class ;
+                                                  owl:complementOf :Adult
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ;
+     rdfs:subClassOf :Male ,
+                     :Person .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Child
+:Child rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :age ;
+                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                         owl:onDatatype xsd:int ;
+                                                                         owl:withRestrictions ( [ xsd:minExclusive "2"^^xsd:int
+                                                                                                ]
+                                                                                                [ xsd:maxInclusive "18"^^xsd:int
+                                                                                                ]
+                                                                                              )
+                                                                       ]
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+       rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Employed
+:Employed rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                       owl:unionOf ( :Adult
+                                                                     :Child
+                                                                   )
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :has-Employer ;
+                                                       owl:someValuesFrom :Organization
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Female
+:Female rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Sexual_Reproducer
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :sex ;
+                                                     owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                         owl:onDatatype xsd:string ;
+                                                                         owl:withRestrictions ( [ xsd:pattern "Female"
+                                                                                                ]
+                                                                                              )
+                                                                       ]
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :Sexual_Reproducer .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Girl
+:Girl rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( :Female
+                                                 :Person
+                                                 [ rdf:type owl:Class ;
+                                                   owl:unionOf ( :Child
+                                                                 :Infant
+                                                               )
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+      rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Inanimate_Object
+:Inanimate_Object rdf:type owl:Class ;
+                  rdfs:subClassOf :Physical_Object .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Infant
+:Infant rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :age ;
+                                                     owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                          owl:onDatatype xsd:int ;
+                                                                          owl:withRestrictions ( [ xsd:minExclusive "0"^^xsd:int
+                                                                                                 ]
+                                                                                                 [ xsd:maxInclusive "2"^^xsd:int
+                                                                                                 ]
+                                                                                               )
+                                                                        ]
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Male
+:Male rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( :Sexual_Reproducer
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :sex ;
+                                                   owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                       owl:onDatatype xsd:string ;
+                                                                       owl:withRestrictions ( [ xsd:pattern "Male"
+                                                                                              ]
+                                                                                            )
+                                                                     ]
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+      rdfs:subClassOf :Sexual_Reproducer .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Man
+:Man rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :sex ;
+                                                  owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                      owl:onDatatype xsd:string ;
+                                                                      owl:withRestrictions ( [ xsd:pattern "Male"
+                                                                                             ]
+                                                                                           )
+                                                                    ]
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ;
+     rdfs:subClassOf :Person ;
+     owl:disjointWith :Woman .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf :Abstract_Object ;
+              owl:disjointWith :SSN .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :Sexual_Reproducer ;
+        owl:disjointUnionOf ( :Adult
+                              :Child
+                              :Infant
+                            ) .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Physical_Object
+:Physical_Object rdf:type owl:Class ;
+                 owl:disjointUnionOf ( :Animate_Object
+                                       :Inanimate_Object
+                                     ) .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Place
+:Place rdf:type owl:Class ;
+       rdfs:subClassOf :Inanimate_Object .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#SSN
+:SSN rdf:type owl:Class ;
+     rdfs:subClassOf :Abstract_Object .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Sexual_Reproducer
+:Sexual_Reproducer rdf:type owl:Class ;
+                   rdfs:subClassOf :Animate_Object ;
+                   owl:disjointUnionOf ( :Female
+                                         :Male
+                                       ) .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Unemployed
+:Unemployed rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                         owl:unionOf ( :Adult
+                                                                       :Child
+                                                                     )
+                                                       ]
+                                                       [ rdf:type owl:Class ;
+                                                         owl:complementOf :Employed
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Woman
+:Woman rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :sex ;
+                                                    owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                        owl:onDatatype xsd:string ;
+                                                                        owl:withRestrictions ( [ xsd:pattern "Female"
+                                                                                               ]
+                                                                                             )
+                                                                      ]
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+       rdfs:subClassOf :Person .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Jess
+:Jess rdf:type owl:NamedIndividual ,
+               :Person ;
+      :has-Father :John ;
+      :has-Mother :Sana ;
+      :age 1 ;
+      :name "Jess"^^xsd:string ;
+      :sex "Female"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#John
+:John rdf:type owl:NamedIndividual ,
+               :Male ,
+               :Person ,
+               :Unemployed ;
+      :age "35"^^xsd:string ;
+      :name "John"^^xsd:string ;
+      :sex "Male"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Maryland
+:Maryland rdf:type owl:NamedIndividual ,
+                   :Place ;
+          :has-Location :United_States_of_America ;
+          :latitude -73.00 ;
+          :longitude 98.00 ;
+          :name "Maryland"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Microsoft
+:Microsoft rdf:type owl:NamedIndividual ,
+                    :Organization ;
+           :name "Microsoft"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Mike
+:Mike rdf:type owl:NamedIndividual ,
+               :Person ;
+      :has-Employer :UMBC ;
+      :has-Location :Maryland ;
+      :age 40 ;
+      :name "Mike"^^xsd:string ;
+      :sex "Male"^^xsd:string ;
+      :ssn "123-456-9875" .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Sana
+:Sana rdf:type owl:NamedIndividual ,
+               :Person ,
+               [ rdf:type owl:Class ;
+                 owl:complementOf :Infant
+               ] ;
+      :has-Employer :Microsoft ;
+      :name "Sana"^^xsd:string ;
+      :sex "Female"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Some_Person
+:Some_Person rdf:type owl:NamedIndividual ,
+                      :Employed ,
+                      :Person .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#UMBC
+:UMBC rdf:type owl:NamedIndividual ,
+               :Organization ;
+      :name "University of Maryland Baltimore County"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#United_States_of_America
+:United_States_of_America rdf:type owl:NamedIndividual ,
+                                   :Place ;
+                          :latitude 45.88 ;
+                          :longitude -98.666 ;
+                          :name "USA"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu
+:sonu rdf:type owl:NamedIndividual ,
+               :Person ;
+      :has-Father :s_Father ;
+      :has-Mother :s_Mother ;
+      :has-SSN :s_SSN ;
+      :age 15 ;
+      :name "sonu"^^xsd:string ;
+      :sex "Male"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_Father
+:s_Father rdf:type owl:NamedIndividual ,
+                   :Person ;
+          :has-Father :s_Grandpa ;
+          :has-Mother :s_Grandma ;
+          :age 39 ;
+          :name "sonu's Father"^^xsd:string ;
+          :sex "Male"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_Grandma
+:s_Grandma rdf:type owl:NamedIndividual ,
+                    :Person ;
+           :age 65 ;
+           :name "sonu's Grandma"^^xsd:string ;
+           :sex "Female"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_Grandpa
+:s_Grandpa rdf:type owl:NamedIndividual ,
+                    :Person ;
+           :age 69 ;
+           :name "sonu's Grandpa"^^xsd:string ;
+           :sex "Male"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_MaternalGrandma
+:s_MaternalGrandma rdf:type owl:NamedIndividual ,
+                            :Person ;
+                   :age 70 ;
+                   :name "sonu's MaternalGrandma"^^xsd:string ;
+                   :sex "Female"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_MaternalGrandpa
+:s_MaternalGrandpa rdf:type owl:NamedIndividual ,
+                            :Person ;
+                   :age 71 ;
+                   :name "sonu's MaternalGrandpa"^^xsd:string ;
+                   :sex "Male"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_Mother
+:s_Mother rdf:type owl:NamedIndividual ,
+                   :Person ;
+          :has-Father :s_MaternalGrandpa ;
+          :has-Mother :s_MaternalGrandma ;
+          :age "45"^^xsd:string ;
+          :name "sonu's Mother"^^xsd:string ;
+          :sex "Female"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_SSN
+:s_SSN rdf:type owl:NamedIndividual ,
+                :SSN ;
+       :ssn "000-222-9999"^^xsd:string .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Adult
+                :Boy
+                :Girl
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Adult
+                :Child
+                :Infant
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

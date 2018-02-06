@@ -1,0 +1,22 @@
+
+{ "head": { "link": [], "vars": ["Person1", "Person2"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Roland_Burris" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Dick_Durbin" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Peter_Fitzgerald_(politician)" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Dick_Durbin" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Michelle_Obama" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Marian_Shields_Robinson" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Roland_Burris" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/United_States_Senate_career_of_Barack_Obama" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Kwame_Raoul" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/United_States_Senate_career_of_Barack_Obama" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Michelle_Obama" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/United_States_Senate_career_of_Barack_Obama" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Peter_Fitzgerald_(politician)" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/United_States_Senate_career_of_Barack_Obama" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/United_States_Senate_career_of_Barack_Obama" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Roland_Burris" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/United_States_Senate_career_of_Barack_Obama" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Peter_Fitzgerald_(politician)" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/United_States_Senate_career_of_Barack_Obama" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Kwame_Raoul" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/United_States_Senate_career_of_Barack_Obama" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Michelle_Obama" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Dick_Durbin" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Roland_Burris" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Dick_Durbin" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Peter_Fitzgerald_(politician)" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Marian_Shields_Robinson" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Michelle_Obama" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Tammy_Duckworth" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Dick_Durbin" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Neal_S._Wolin" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Daniel_Meltzer" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/United_States_Senate_career_of_Barack_Obama" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Dick_Durbin" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Daniel_Meltzer" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Neal_S._Wolin" }},
+    { "Person1": { "type": "uri", "value": "http://dbpedia.org/resource/Dick_Durbin" }	, "Person2": { "type": "uri", "value": "http://dbpedia.org/resource/Tammy_Duckworth" }} ] } }

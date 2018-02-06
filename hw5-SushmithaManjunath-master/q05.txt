@@ -1,0 +1,19 @@
+# Find MD universities known to have > 5000 students of any type
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX yago: <http://dbpedia.org/class/yago/>
+
+SELECT DISTINCT ?University, ?Undergraduate, ?Graduate, ?Total
+WHERE {
+{ ?University a dbo:University } UNION { ?University dbp:type dbr:Private_university } UNION { ?University dbp:type dbr:Public_university } .
+?University dbo:state dbr:Maryland .
+OPTIONAL { ?University dbo:numberOfPostgraduateStudents  ?Graduate } .
+OPTIONAL { ?University dbo:numberOfUndergraduateStudents  ?Undergraduate  }
+BIND ( (if( bound(?Undergraduate), ?Undergraduate, 0)) + (if( bound(?Graduate), ?Graduate, 0)) as ?Total) . 
+FILTER ( ?Total > 5000 )
+}
+ORDER BY DESC(?Total)

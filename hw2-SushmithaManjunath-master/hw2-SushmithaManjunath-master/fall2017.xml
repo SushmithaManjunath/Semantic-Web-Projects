@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sush.xsl"?>
+<schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="sush.xsd">
+    <year>2017</year> 
+    <semester>Fall</semester>
+    <differentCourses>
+        
+        <course>
+        <programidentifier>CMSC</programidentifier>
+        <number>304</number>
+        <title>Social and Ethical Issues in Information Technology</title>
+        <credits>3</credits>
+        <prerequisiteclasses>You must complete CMSC 202 or CMSC 202H and ENGL 100 or equivalent with a C or better</prerequisiteclasses>
+        <description>A survey course that reviews social issues and the ethical impact of information technology throughout the world. 
+            The course examines the policy issues that relate to the use of information technology, such as persona, privacy,
+            rights of access, security, transborder information flow and confidentiality.</description>
+        
+        <section>
+            <sectionNumber>02</sectionNumber>
+            <instructor>Kimberly Bonnette</instructor>
+            <classNumber>6176</classNumber>
+            <room>Fine Arts 014</room>
+            <days>TuTh</days>
+            <startTime>7:10 pm</startTime>
+            <endTime>8:25 pm</endTime>
+            <status>open</status>
+        </section>
+        
+        <section>
+            <sectionNumber>03</sectionNumber>
+            <instructor>Edward Birrane</instructor>
+            <classNumber>6812</classNumber>
+            <room>Fine Arts 014</room>
+            <days>MoWe</days>
+            <startTime>5:30 pm</startTime>
+            <endTime>6:45 pm</endTime>
+            <status>closed</status>
+        </section>
+        
+        <section>
+            <sectionNumber>04</sectionNumber>
+            <instructor>Kimberly Bonnette</instructor>
+            <classNumber>7241</classNumber>
+            <room>Fine Arts 014</room>
+            <days>TuTh</days>
+            <startTime>5:30 pm</startTime>
+            <endTime>6:45 pm</endTime>
+            <status>closed</status>
+        </section>
+        
+        <section>
+            <sectionNumber>05</sectionNumber>
+            <instructor>Edward Birrane</instructor>
+            <classNumber>8024</classNumber>
+            <room>Fine Arts 014</room>
+            <days>MoWe</days>
+            <startTime>7:10 pm</startTime>
+            <endTime>8:25 pm</endTime>
+            <status>open</status>
+        </section>
+        </course>
+        
+       
+  
+    
+    <course>
+        <programidentifier>CMSC</programidentifier>
+        <number>441</number>
+        <title>Design and Analysis of Algorithms.</title>
+        <credits>3</credits>
+        <prerequisiteclasses>You must have completed MATH 142 or MATH 152 and CMSC 341 and STAT 355 with a grade of C or better.</prerequisiteclasses>
+        <description>This course studies fundamental algorithms, strategies for designing algorithms, and mathematical tools for analyzing algorithms. 
+            Fundamental algorithms studied in this course include algorithms for sorting and searching, hashing, and graph algorithms.
+            Mathematical tools include asymptotic notations and methods for solving recurrences.
+            Algorithm design strategies include the greedy method, divide-and-conquer, dynamic programming, and randomization.</description>
+        
+        <section>
+            <sectionNumber>01</sectionNumber>
+            <instructor>Nikolaos Baroutis</instructor>
+            <classNumber>1132</classNumber>
+            <room>Janet and Walter Sondheim 112</room>
+            <days>MoWeFr</days>
+            <startTime>11:00 am</startTime>
+            <endTime>11:50 am</endTime>
+            <status>open</status>
+        </section>
+        
+        <section>
+            <sectionNumber>02</sectionNumber>
+            <instructor>Christopher Marron</instructor>
+            <classNumber>1133</classNumber>
+            <room>Sherman Hall 151</room>
+            <days>TuTh</days>
+            <startTime>11:30 am</startTime>
+            <endTime>12:45 pm</endTime>
+            <status>closed</status>
+        </section>
+        
+        <section>
+            <sectionNumber>03</sectionNumber>
+            <instructor>Christopher Marron</instructor>
+            <classNumber>6800</classNumber>
+            <room>Information Technology 227</room>
+            <days>MoWe</days>
+            <startTime>2:30 pm</startTime>
+            <endTime>3:45 pm</endTime>
+            <status>closed</status>
+        </section>
+        
+        <section>
+            <sectionNumber>04</sectionNumber>
+            <instructor>Nikolaos Baroutis</instructor>
+            <classNumber>8193</classNumber>
+            <room>Janet and Walter Sondheim 208</room>
+            <days>TuTh</days>
+            <startTime>2:30 pm</startTime>
+            <endTime>3:25 pm</endTime>
+            <status>open</status>
+        </section>
+        </course>
+        
+       
+        
+        
+        
+        <course>
+            <programidentifier>CMSC</programidentifier>
+            <number>491</number>
+            <title>Special topics in Computer Science.</title>
+            <credits>3</credits>
+            <prerequisiteclasses>Dependent on sections</prerequisiteclasses>
+            <description>Special topics in Computer Science. This course is repeatable for credit.
+            </description>
+            
+            <section>
+                <sectionNumber>01</sectionNumber>
+                <instructor>Timothy Finin</instructor>
+                <classNumber>4115</classNumber>
+                <room>Performing Arts and Humani 107</room>
+                <days>MoWe</days>
+                <startTime>4:00 pm</startTime>
+                <endTime>5:15 pm</endTime>
+                <status>open</status>
+            </section>
+            
+            <section>
+                <sectionNumber>02</sectionNumber>
+                <instructor>Konstntin Kalpakis</instructor>
+                <classNumber>6178</classNumber>
+                <room>Physics 101</room>
+                <days>TuTh</days>
+                <startTime>10:00 am</startTime>
+                <endTime>11:15 am</endTime>
+                <status>open</status>
+            </section>
+            
+            <section>
+                <sectionNumber>03</sectionNumber>
+                <instructor>Adam Bargteil</instructor>
+                <classNumber>8004</classNumber>
+                <room>Performing Arts and Humani 132</room>
+                <days>MoWe</days>
+                <startTime>1:00 pm</startTime>
+                <endTime>2:15 pm</endTime>
+                <status>open</status>
+            </section>
+            
+            <section>
+                <sectionNumber>04</sectionNumber>
+                <instructor>Deepinder Sidhu</instructor>
+                <classNumber>8006</classNumber>
+                <room>Performing Arts and Humani 234</room>
+                <days>MoWe</days>
+                <startTime>4:00 pm</startTime>
+                <endTime>5:15 pm</endTime>
+                <status>open</status>
+            </section>
+            
+            <section>
+                <sectionNumber>06</sectionNumber>
+                <instructor>John Park</instructor>
+                <classNumber>8046</classNumber>
+                <room>Albin O Kuhn Library and G 216M</room>
+                <days>TuTh</days>
+                <startTime>8:30 am</startTime>
+                <endTime>9:45 am</endTime>
+                <status>closed</status>
+            </section>
+            
+            <section>
+                <sectionNumber>07</sectionNumber>
+                <instructor>Thomas Olano</instructor>
+                <classNumber>8034</classNumber>
+                <room>Information Technology 227</room>
+                <days>TuTh</days>
+                <startTime>11:30 am</startTime>
+                <endTime>12:45 pm</endTime>
+                <status>open</status>
+            </section>
+            
+            <section>
+                <sectionNumber>08</sectionNumber>
+                <instructor>Charles Nicholas</instructor>
+                <classNumber>8223</classNumber>
+                <room>Sherman Hall 151</room>
+                <days>We</days>
+                <startTime>7:10 pm</startTime>
+                <endTime>9:40 pm</endTime>
+                <status>closed</status>
+            </section>
+            
+        </course>  
+    </differentCourses>
+        
+</schedule>
+
+

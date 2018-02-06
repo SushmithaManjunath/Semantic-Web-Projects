@@ -1,0 +1,10 @@
+
+{ "head": { "link": [], "vars": ["Pres", "Child", "School"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "Pres": { "type": "uri", "value": "http://dbpedia.org/resource/Calvin_Coolidge" }	, "Child": { "type": "uri", "value": "http://dbpedia.org/resource/John_Coolidge" }	, "School": { "type": "uri", "value": "http://dbpedia.org/resource/Amherst_College" }},
+    { "Pres": { "type": "uri", "value": "http://dbpedia.org/resource/Dwight_D._Eisenhower" }	, "Child": { "type": "uri", "value": "http://dbpedia.org/resource/John_Eisenhower" }	, "School": { "type": "uri", "value": "http://dbpedia.org/resource/United_States_Military_Academy" }},
+    { "Pres": { "type": "uri", "value": "http://dbpedia.org/resource/James_A._Garfield" }	, "Child": { "type": "uri", "value": "http://dbpedia.org/resource/James_Rudolph_Garfield" }	, "School": { "type": "uri", "value": "http://dbpedia.org/resource/Williams_College" }},
+    { "Pres": { "type": "uri", "value": "http://dbpedia.org/resource/George_H._W._Bush" }	, "Child": { "type": "uri", "value": "http://dbpedia.org/resource/George_W._Bush" }	, "School": { "type": "uri", "value": "http://dbpedia.org/resource/Yale_University" }},
+    { "Pres": { "type": "uri", "value": "http://dbpedia.org/resource/George_W._Bush" }	, "Child": { "type": "uri", "value": "http://dbpedia.org/resource/Barbara_Bush_(born_1981)" }	, "School": { "type": "uri", "value": "http://dbpedia.org/resource/Yale_University" }},
+    { "Pres": { "type": "uri", "value": "http://dbpedia.org/resource/Bill_Clinton" }	, "Child": { "type": "uri", "value": "http://dbpedia.org/resource/Chelsea_Clinton" }	, "School": { "type": "uri", "value": "http://dbpedia.org/resource/University_College,_Oxford" }},
+    { "Pres": { "type": "uri", "value": "http://dbpedia.org/resource/John_Adams" }	, "Child": { "type": "uri", "value": "http://dbpedia.org/resource/John_Quincy_Adams" }	, "School": { "type": "uri", "value": "http://dbpedia.org/resource/Harvard_College" }} ] } }

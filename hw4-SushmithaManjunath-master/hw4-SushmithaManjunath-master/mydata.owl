@@ -1,0 +1,148 @@
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Jess
+:Jess rdf:type owl:NamedIndividual ,
+               :Person ;
+      :has-Father :John ;
+      :has-Mother :Sana ;
+      :age 1 ;
+      :name "Jess"^^xsd:string ;
+      :sex "Female"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#John
+:John rdf:type owl:NamedIndividual ,
+               :Male ,
+               :Person ,
+               :Unemployed ;
+      :age "35"^^xsd:string ;
+      :name "John"^^xsd:string ;
+      :sex "Male"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Maryland
+:Maryland rdf:type owl:NamedIndividual ,
+                   :Place ;
+          :has-Location :United_States_of_America ;
+          :latitude -73.00 ;
+          :longitude 98.00 ;
+          :name "Maryland"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Microsoft
+:Microsoft rdf:type owl:NamedIndividual ,
+                    :Organization ;
+           :name "Microsoft"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Mike
+:Mike rdf:type owl:NamedIndividual ,
+               :Person ;
+      :has-Employer :UMBC ;
+      :has-Location :Maryland ;
+      :age 40 ;
+      :name "Mike"^^xsd:string ;
+      :sex "Male"^^xsd:string ;
+      :ssn "123-456-9875" .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Sana
+:Sana rdf:type owl:NamedIndividual ,
+               :Person ,
+               [ rdf:type owl:Class ;
+                 owl:complementOf :Infant
+               ] ;
+      :has-Employer :Microsoft ;
+      :name "Sana"^^xsd:string ;
+      :sex "Female"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#Some_Person
+:Some_Person rdf:type owl:NamedIndividual ,
+                      :Employed ,
+                      :Person .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#UMBC
+:UMBC rdf:type owl:NamedIndividual ,
+               :Organization ;
+      :name "University of Maryland Baltimore County"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#United_States_of_America
+:United_States_of_America rdf:type owl:NamedIndividual ,
+                                   :Place ;
+                          :latitude 45.88 ;
+                          :longitude -98.666 ;
+                          :name "USA"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu
+:sonu rdf:type owl:NamedIndividual ,
+               :Person ;
+      :has-Father :s_Father ;
+      :has-Mother :s_Mother ;
+      :has-SSN :s_SSN ;
+      :age 15 ;
+      :name "sonu"^^xsd:string ;
+      :sex "Male"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_Father
+:s_Father rdf:type owl:NamedIndividual ,
+                   :Person ;
+          :has-Father :s_Grandpa ;
+          :has-Mother :s_Grandma ;
+          :age 39 ;
+          :name "sonu's Father"^^xsd:string ;
+          :sex "Male"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_Grandma
+:s_Grandma rdf:type owl:NamedIndividual ,
+                    :Person ;
+           :age 65 ;
+           :name "sonu's Grandma"^^xsd:string ;
+           :sex "Female"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_Grandpa
+:s_Grandpa rdf:type owl:NamedIndividual ,
+                    :Person ;
+           :age 69 ;
+           :name "sonu's Grandpa"^^xsd:string ;
+           :sex "Male"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_MaternalGrandma
+:s_MaternalGrandma rdf:type owl:NamedIndividual ,
+                            :Person ;
+                   :age 70 ;
+                   :name "sonu's MaternalGrandma"^^xsd:string ;
+                   :sex "Female"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_MaternalGrandpa
+:s_MaternalGrandpa rdf:type owl:NamedIndividual ,
+                            :Person ;
+                   :age 71 ;
+                   :name "sonu's MaternalGrandpa"^^xsd:string ;
+                   :sex "Male"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_Mother
+:s_Mother rdf:type owl:NamedIndividual ,
+                   :Person ;
+          :has-Father :s_MaternalGrandpa ;
+          :has-Mother :s_MaternalGrandma ;
+          :age "45"^^xsd:string ;
+          :name "sonu's Mother"^^xsd:string ;
+          :sex "Female"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sushmitha/ontologies/2017/10/untitled-ontology-4#sonu's_SSN
+:s_SSN rdf:type owl:NamedIndividual ,
+                :SSN ;
+       :ssn "000-222-9999"^^xsd:string .

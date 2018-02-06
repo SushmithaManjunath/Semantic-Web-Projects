@@ -1,0 +1,12 @@
+# complete the three urls for your pages
+
+# rdfa version
+https://semanticwebhw.000webhostapp.com/gq36655_rdfa.html
+
+# microdata version
+https://semanticwebhw.000webhostapp.com/gq36655_microdata.html
+
+# json-ld version
+https://semanticwebhw.000webhostapp.com/gq36655_jsonLD.html
+
+

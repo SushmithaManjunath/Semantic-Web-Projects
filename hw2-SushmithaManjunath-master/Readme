@@ -1,0 +1,6 @@
+Run XML file in firefox browser.
+For doing this XML transaformation I used oxygen editor for editing and simple html tags.
+In style sheet I have used tags such as:
+<table > - For making tables
+<tr bgcolor="#9acd32">- For table row along with color attribute.
+<xsl:for-each select="section"> - For selecting each value

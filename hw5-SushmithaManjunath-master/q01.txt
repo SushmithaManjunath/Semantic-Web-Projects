@@ -1,0 +1,19 @@
+REFIX yago: <http://dbpedia.org/class/yago/>
+
+# Find all universities and their names that are located in Maryland 
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX yago: <http://dbpedia.org/class/yago/>
+PREFIX dbpedia: <http://dbpedia.org/resource/>
+SELECT ?University
+WHERE {
+?University dbo:state dbr:Maryland. 
+{ ?University a dbo:University } UNION { ?University dbp:type dbpedia:Private_university } UNION { ?University dbp:type dbpedia:Public_university } .
+}
+
+
+

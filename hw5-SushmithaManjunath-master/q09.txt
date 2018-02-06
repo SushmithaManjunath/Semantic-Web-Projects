@@ -1,0 +1,26 @@
+# Find the University with most undergrad students in each US state.
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX yago: <http://dbpedia.org/class/yago/>
+
+SELECT ?State, ?University, ?MaxUG
+WHERE { 
+{ ?University a dbo:University } UNION { ?University dbp:type dbr:Private_university } UNION { ?University dbp:type dbr:Public_university } .
+?University dbo:state ?State . 
+?University dbp:undergrad ?MaxUG . 
+{
+SELECT ?State, MAX (?Undergraduate) AS ?MaxUG , ?ug ,?University
+WHERE {
+{ ?University a dbo:University } UNION { ?University dbp:type dbr:Private_university } UNION { ?University dbp:type dbr:Public_university } .
+?State dbo:country dbr:United_States . 
+?University dbo:state ?State .
+OPTIONAL { ?University dbo:numberOfUndergraduateStudents  ?ug  } .
+BIND ( (if( bound(?ug ), ?ug, 0)) as ?Undergraduate) . 
+}
+GROUP BY ?State ?ug ?University
+}
+}

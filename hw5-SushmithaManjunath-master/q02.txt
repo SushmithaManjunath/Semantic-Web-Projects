@@ -1,0 +1,14 @@
+# Find US states, their capitals and largest cities
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX yago: <http://dbpedia.org/class/yago/>
+
+SELECT DISTINCT ?St, ?Cap, ?LCity
+WHERE {
+?St dbo:country dbr:United_States .
+?St dbo:capital ?Cap.
+?St dbo:largestCity ?LCity
+}
